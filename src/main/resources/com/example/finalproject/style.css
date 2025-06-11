@@ -1,0 +1,250 @@
+.root{
+    -fx-font-family: "Roboto Light";
+}
+
+.main-page{
+    -fx-padding: 40px 40px;
+}
+
+.header {
+    -fx-background-color: #D9D9D9;
+}
+
+.titleLabel{
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.filterLabel{
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 6 6;
+}
+
+.date-picker-main {
+    -fx-max-width: 500px;
+    -fx-min-width: 45px;
+}
+
+.date-picker-main {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d0d0d0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 8;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #999999;
+    -fx-cursor: text;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 1, 0, 0, 1);
+    -fx-transition: all 0.3s ease;
+}
+.date-picker-main .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 4 6;
+    -fx-text-fill: #333;
+    -fx-prompt-text-fill: #999;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.date-picker-main .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.date-picker-main:focused {
+    -fx-border-color: #4285f4;
+    -fx-background-color: #f0f8ff;
+    -fx-effect: dropshadow(gaussian, rgba(66, 133, 244, 0.3), 5, 0, 0, 0);
+}
+.date-picker-main:hover {
+    -fx-border-color: #888888;
+}
+
+.textInput{
+    -fx-max-width: 1000px;
+    -fx-min-height: 45px;
+}
+
+.button{
+    -fx-cursor: hand;
+}
+
+.cancel {
+    -fx-font-weight: 600;
+    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(to bottom, #ff4c4c, #d93636);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(217, 54, 54, 0.5), 6, 0, 0, 2);
+    -fx-transition: all 0.3s ease;
+}
+
+.cancel:hover {
+    -fx-background-color: linear-gradient(to bottom, #d93636, #b02a2a);
+    -fx-effect: dropshadow(gaussian, rgba(176, 42, 42, 0.7), 8, 0, 0, 3);
+}
+
+.manage {
+    -fx-font-weight: 600;
+    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(to bottom, #4c9eff, #2a74d9);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(42, 116, 217, 0.5), 6, 0, 0, 2);
+    -fx-transition: all 0.3s ease;
+}
+
+.manage:hover {
+    -fx-background-color: linear-gradient(to bottom, #2a74d9, #1c57b0);
+    -fx-effect: dropshadow(gaussian, rgba(28, 87, 176, 0.7), 8, 0, 0, 3);
+}
+
+
+.textInput {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d0d0d0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 8;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #999999;
+    -fx-cursor: text;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 1, 0, 0, 1);
+    -fx-transition: all 0.3s ease;
+}
+
+.textInput:focused {
+    -fx-border-color: #4285f4;
+    -fx-background-color: #f0f8ff;
+    -fx-effect: dropshadow(gaussian, rgba(66, 133, 244, 0.3), 5, 0, 0, 0);
+}
+.textInput:hover {
+    -fx-border-color: #888888;
+}
+
+.combo-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d0d0d0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 6 0;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-text-fill: #333333;
+}
+
+.combo-box:hover {
+    -fx-border-color: #888;
+    -fx-cursor: hand;
+}
+
+.combo-box:focused {
+    -fx-border-color: #4285f4;
+    -fx-background-color: #f0f8ff;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #555;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 8 12;
+    -fx-font-size: 13px;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 5;
+}
+
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 8;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #888;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.scroll-bar:vertical .thumb:hover,
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #555;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 8;
+}
+
+.scroll-bar:horizontal {
+    -fx-pref-height: 8;
+}
+
+.clear-button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-padding: 8 20 8 20;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.4), 6, 0, 0, 3);
+    -fx-font-size: 14px;
+    -fx-transition: all 0.6s ease;
+}
+
+.clear-button:hover {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.6), 8, 0, 0, 4);
+}
+
+.clear-button:pressed {
+    -fx-background-color: #1d4ed8;
+    -fx-effect: none;
+}
+
+.HBoxClearButton{
+    -fx-padding: 10px 0px;
+}
+
+.date-range{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-background-radius: 3;
+    -fx-padding: 5 10;
+}
+
+.modal {
+    -fx-padding: 20px;
+}
+
+
+
+
+

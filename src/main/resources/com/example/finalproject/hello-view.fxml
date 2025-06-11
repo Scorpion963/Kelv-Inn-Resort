@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="900.0" styleClass="main-page" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject.HelloController">
+    <top>
+        <GridPane hgap="20.0" prefHeight="326.0" prefWidth="900.0" vgap="20.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="750.0" minWidth="437.0" prefWidth="437.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="750.0" minWidth="418.0" prefWidth="443.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="ALWAYS" />
+                <RowConstraints vgrow="ALWAYS" />
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
+
+            <children>
+                <VBox>
+                    <children>
+                        <Label prefHeight="33.0" prefWidth="411.0" styleClass="titleLabel" text="Manage Rooms" />
+                    </children>
+                </VBox>
+                <VBox GridPane.rowIndex="1">
+                    <children>
+                        <Label prefHeight="30.0" prefWidth="409.0" styleClass="filterLabel" text="Room Type" />
+                        <ComboBox fx:id="roomType" prefWidth="150.0" styleClass="textInput" />
+                    </children>
+                </VBox>
+                <VBox GridPane.rowIndex="2">
+                    <children>
+                        <VBox prefHeight="104.0" prefWidth="409.0">
+                            <children>
+                                <HBox fx:id="numberInputContainer" alignment="BASELINE_LEFT" prefHeight="31.0" prefWidth="409.0">
+                                    <children>
+                                        <Label prefHeight="31.0" styleClass="filterLabel" text="Room Number" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="roomNumber" styleClass="textInput" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Label prefHeight="30.0" prefWidth="471.0" styleClass="filterLabel" text="Action" />
+                        <ComboBox fx:id="action" styleClass="textInput" />
+                    </children>
+                </VBox>
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <VBox>
+                            <children>
+                                <HBox fx:id="selectDateHorizontalBox">
+                                    <children>
+                                        <Label prefHeight="31.0" styleClass="filterLabel" text="Select Date" />
+                                        <Label fx:id="filterDatePickerError" prefHeight="31.0" style="-fx-text-fill: red;" text="Label" />
+                                    </children>
+                                </HBox>
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <DatePicker fx:id="datePickerFrom" styleClass="date-picker-main" HBox.hgrow="ALWAYS" />
+                                        <DatePicker fx:id="datePickerTo" styleClass="date-picker-main" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="471.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#clearFields" styleClass="clear-button" text="Clear" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+    </top>
+    <center>
+        <VBox prefHeight="359.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefWidth="900.0">
+                    <children>
+                        <HBox fx:id="cardsSizeTitle">
+                            <children>
+                                <Label fx:id="availableOrCancelTitle" styleClass="titleLabel" text="Available Rooms" />
+                                <Label fx:id="cardSize" text="Label" />
+                            </children>
+                        </HBox>
+                        <Label text="Hover over the cards to get more info about the rooms" />
+                    </children>
+                </VBox>
+                <ScrollPane fitToWidth="true" prefHeight="313.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+                    <content>
+                        <FlowPane fx:id="roomsContainer" hgap="10" prefHeight="311.0" prefWidth="885.0" prefWrapLength="886.0" vgap="10" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
