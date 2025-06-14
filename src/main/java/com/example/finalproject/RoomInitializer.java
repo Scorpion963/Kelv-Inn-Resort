@@ -7,28 +7,31 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class RoomInitializer {
+    // path to the rooms.json file in the user's home directory
     private static final String ROOMS_FILE = System.getProperty("user.home") + File.separator + "rooms.json";
     private static final ObjectMapper mapper = new ObjectMapper();
 
-
+    // loads room data from a file or creates default rooms if file is missing or empty.
     public static CustomLinkedList<Room> initializeRooms() {
         File file = new File(ROOMS_FILE);
         CustomLinkedList<Room> rooms = new CustomLinkedList<Room>();
 
         try {
             if (!file.exists()) {
+                // file doesn't exist: create and save default rooms
                 rooms = createDefaultRooms();
                 updateRooms(rooms);
             } else {
                 if (Files.size(Path.of(ROOMS_FILE)) == 0) {
+                    // file exists but is empty: regenerate default rooms
                     rooms = createDefaultRooms();
                     updateRooms(rooms);
                 } else {
+                    // file exists and has content: load rooms from JSON
                     List<Room> loadedRooms = mapper.readValue(file, new TypeReference<List<Room>>() {
                     });
                     for (Room room : loadedRooms) {
@@ -37,23 +40,23 @@ public class RoomInitializer {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
-            rooms = createDefaultRooms();
+            rooms = createDefaultRooms(); // fallback in case of read error
         }
 
         return rooms;
     }
 
+    // writes the given room list to the rooms.json file.
     public static int updateRooms(CustomLinkedList<Room> rooms) {
         try {
             mapper.writerWithDefaultPrettyPrinter().writeValue(new File(ROOMS_FILE), rooms.toList());
             return 1;
         } catch (IOException e) {
-            e.printStackTrace();
             return -1;
         }
     }
 
+    // creates a default set of rooms divided by category and number range.
     private static CustomLinkedList<Room> createDefaultRooms() {
         CustomLinkedList<Room> rooms = new CustomLinkedList<Room>();
 

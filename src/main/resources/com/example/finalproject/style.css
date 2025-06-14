@@ -33,7 +33,6 @@
     -fx-background-radius: 8;
     -fx-padding: 8 8;
     -fx-font-size: 14px;
-    -fx-font-family: "Segoe UI", sans-serif;
     -fx-text-fill: #333333;
     -fx-prompt-text-fill: #999999;
     -fx-cursor: text;
@@ -49,7 +48,6 @@
     -fx-text-fill: #333;
     -fx-prompt-text-fill: #999;
     -fx-font-size: 14px;
-    -fx-font-family: "Segoe UI", sans-serif;
 }
 
 .date-picker-main .arrow-button {
@@ -76,22 +74,6 @@
     -fx-cursor: hand;
 }
 
-.cancel {
-    -fx-font-weight: 600;
-    -fx-text-fill: white;
-    -fx-background-color: linear-gradient(to bottom, #ff4c4c, #d93636);
-    -fx-background-radius: 12;
-    -fx-border-radius: 12;
-    -fx-padding: 8 20;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(217, 54, 54, 0.5), 6, 0, 0, 2);
-    -fx-transition: all 0.3s ease;
-}
-
-.cancel:hover {
-    -fx-background-color: linear-gradient(to bottom, #d93636, #b02a2a);
-    -fx-effect: dropshadow(gaussian, rgba(176, 42, 42, 0.7), 8, 0, 0, 3);
-}
 
 .manage {
     -fx-font-weight: 600;
@@ -118,7 +100,6 @@
     -fx-background-radius: 8;
     -fx-padding: 8 8;
     -fx-font-size: 14px;
-    -fx-font-family: "Segoe UI", sans-serif;
     -fx-text-fill: #333333;
     -fx-prompt-text-fill: #999999;
     -fx-cursor: text;
@@ -142,7 +123,6 @@
     -fx-background-radius: 8;
     -fx-padding: 6 0;
     -fx-font-size: 14px;
-    -fx-font-family: "Segoe UI", sans-serif;
     -fx-text-fill: #333333;
 }
 
@@ -215,7 +195,6 @@
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.4), 6, 0, 0, 3);
     -fx-font-size: 14px;
-    -fx-transition: all 0.6s ease;
 }
 
 .clear-button:hover {
@@ -244,7 +223,74 @@
     -fx-padding: 20px;
 }
 
+.error-label {
+    -fx-text-fill: red;
+}
 
+.room-card {
+    -fx-border-color: #ccc;
+    -fx-background-color: #f9f9f9;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.room-card-tooltip{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+}
+
+.room-title {
+    -fx-font-weight: bold;
+}
+
+.room-price {
+    -fx-text-fill: #555;
+}
+
+.room-include {
+    -fx-text-fill: #777;
+    -fx-font-size: 11px;
+}
+
+.section-header {
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.section-box {
+    -fx-background-color: #fafafa;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.cancel-button {
+    -fx-font-weight: 800;
+    -fx-padding: 8px 16px;
+    -fx-background-color: #e12f2f;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #a32323;
+    -fx-text-fill: white;
+}
+
+.add-reservation-button {
+    -fx-font-weight: 800;
+    -fx-padding: 8px 16px;
+    -fx-background-color: #315ded;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+}
+
+.add-reservation-button:hover {
+    -fx-background-color: #284abd;
+}
 
 
 

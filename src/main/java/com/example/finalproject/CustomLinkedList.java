@@ -5,9 +5,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
 
+// custom singly linked list implementation with filter and iterable support
 public class CustomLinkedList<T> implements Iterable<T> {
     private Node<T> head;
 
+    // internal node class to store data and next reference
     private static class Node<E> {
         E data;
         Node<E> next;
@@ -22,6 +24,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
         head = null;
     }
 
+    // copy constructor: creates a deep copy of another CustomLinkedList
     public CustomLinkedList(CustomLinkedList<T> other) {
         if (other == null) return;
         Node<T> current = other.head;
@@ -31,6 +34,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
         }
     }
 
+    // adds a new element to the end of the list
     public void add(T data) {
         Node<T> newNode = new Node<>(data);
         if (head == null) {
@@ -44,6 +48,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
         }
     }
 
+    // returns the element at the specified index
     public T get(int index) {
         int count = 0;
         Node<T> current = head;
@@ -55,6 +60,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
         throw new IndexOutOfBoundsException("Index: " + index);
     }
 
+    // sets the value at the specified index
     public void set(int index, T data) {
         int count = 0;
         Node<T> current = head;
@@ -69,6 +75,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
         throw new IndexOutOfBoundsException("Index: " + index);
     }
 
+    // removes the first occurrence of the target value from the list
     public boolean remove(T target) {
         if (head == null || target == null) return false;
 
@@ -89,6 +96,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
         return false;
     }
 
+    // returns the number of elements in the list
     public int size() {
         int count = 0;
         Node<T> current = head;
@@ -99,6 +107,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
         return count;
     }
 
+    // converts the list to a standard Java List
     public List<T> toList() {
         List<T> result = new ArrayList<>();
         Node<T> current = head;
@@ -109,6 +118,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
         return result;
     }
 
+    // returns a new CustomLinkedList containing only elements that match the given condition
     public CustomLinkedList<T> filter(Predicate<T> condition) {
         CustomLinkedList<T> result = new CustomLinkedList<>();
         Node<T> current = head;
@@ -121,6 +131,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
         return result;
     }
 
+    // enables foreach-style iteration over the list
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {

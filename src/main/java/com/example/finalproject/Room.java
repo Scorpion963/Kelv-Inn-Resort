@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class Room {
-    private static final double TAX_RATE = 0.2;
+    private static final double TAX_RATE = 0.2; // 20% tax rate
     private String roomType;
     private int roomNumber;
     private String[] includes;
@@ -19,6 +19,7 @@ public class Room {
 
     }
 
+    // constructor to initialize all room fields and prepare empty booking list
     public Room(String roomType, int roomNumber, String[] includes, int price, String imageName) {
         this.roomType = roomType;
         this.roomNumber = roomNumber;
@@ -28,6 +29,7 @@ public class Room {
         this.bookedDates = new CustomLinkedList<DateRange>();
     }
 
+    // getters/setters
     public CustomLinkedList<DateRange> getBookedDates() {
         return bookedDates;
     }
@@ -80,16 +82,19 @@ public class Room {
         this.price = price;
     }
 
+    // excludes this from JSON, and returns price with 20% tax
     @JsonIgnore
     public double getPriceWithTax() {
         return Math.round(price * (1 + TAX_RATE));
     }
 
+    // excludes from JSON, indicates availability based on bookings
     @JsonIgnore
     public boolean isAvailable() {
         return bookedDates.size() == 0;
     }
 
+    // deserializes list into internal linked list
     @JsonProperty("bookedDates")
     public void setBookedDatesFromJson(List<DateRange> dates) {
         bookedDates = new CustomLinkedList<>();
@@ -98,6 +103,7 @@ public class Room {
         }
     }
 
+    // serializes internal linked list as a List for JSON
     @JsonProperty("bookedDates")
     public List<DateRange> getBookedDatesForJson() {
         return bookedDates.toList();

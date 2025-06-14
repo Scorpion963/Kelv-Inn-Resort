@@ -10,10 +10,13 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        // loads the FXML layout for the main UI
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml")); // loads the main fxml file
         Scene scene = new Scene(fxmlLoader.load());
+        // applies CSS styling
         scene.getStylesheets().add(HelloApplication.class.getResource("style.css").toExternalForm());
 
+        // configures window properties
         stage.setResizable(true);
         stage.setHeight(900);
         stage.setWidth(1200);
@@ -25,6 +28,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(); // entry point for JavaFX application
     }
 }
