@@ -11,8 +11,8 @@ import java.util.List;
 
 
 public class RoomInitializer {
-    // path to the rooms.json file in the user's home directory
-    private static final String ROOMS_FILE = System.getProperty("user.home") + File.separator + "rooms.json";
+    // path to the rooms_1.json file in the user's home directory
+    private static final String ROOMS_FILE = System.getProperty("user.home") + File.separator + "rooms_1.json";
     private static final ObjectMapper mapper = new ObjectMapper();
 
     // loads room data from a file or creates default rooms if file is missing or empty.

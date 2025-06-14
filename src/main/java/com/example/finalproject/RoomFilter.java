@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 // applies filtering logic to a list of rooms based on user-selected criteria
 public class RoomFilter {
+    // Applies all selected filters to the given list of rooms.
+    // Returns a new filtered list, or null if the room number input is invalid.
     public static CustomLinkedList<Room> applyFilters(CustomLinkedList<Room> rooms, RoomFilterCriteria criteria) {
         CustomLinkedList<Room> filtered = new CustomLinkedList<>(rooms);
 
@@ -35,7 +37,7 @@ public class RoomFilter {
         }
     }
 
-    // filters by exact room type (case-insensitive) (e.g. "Standard Single")
+    // filters by exact room type (case-insensitive) Example: "Standard Single"
     public static CustomLinkedList<Room> filterByType(CustomLinkedList<Room> rooms, String type) {
         return rooms.filter(r -> r.getRoomType().equalsIgnoreCase(type));
     }

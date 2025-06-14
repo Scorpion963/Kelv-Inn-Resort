@@ -118,7 +118,7 @@ public class HelloController implements Initializable {
         cardSize.getStyleClass().add("titleLabel");
     }
 
-    // displays a validation error below the room number input
+    // displays a validation error over the room number input
     private void displayRoomError(String error) {
         clearRoomNumberError();
         Label label = new Label(error);
@@ -169,7 +169,7 @@ public class HelloController implements Initializable {
         }).showAndWait();
     }
 
-    // Updates the internal room list after a room is modified
+    // Updates the room list after a room is modified
     private void updateRoomInList(Room updated) {
         for (int i = 0; i < rooms.size(); i++) {
             if (rooms.get(i).getRoomNumber() == updated.getRoomNumber()) {

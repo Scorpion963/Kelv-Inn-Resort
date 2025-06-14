@@ -79,7 +79,7 @@ public class RoomManagerDialog {
         box.getChildren().add(header);
 
         refreshRunnable = () -> {
-            box.getChildren().setAll(header); // clears and repopulates
+            box.getChildren().setAll(header);
             for (DateRange r : dateRanges) {
                 LocalDate from = DateUtils.toLocal(r.getStartDate());
                 LocalDate to = DateUtils.toLocal(r.getEndDate());
@@ -103,7 +103,7 @@ public class RoomManagerDialog {
         return box;
     }
 
-    // creates the section where the user can book new reservations.
+    // creates a section where the user can book new reservations.
     private VBox createBookingSection() {
         Label header = new Label("Book Reservations:");
         header.getStyleClass().add("section-header");
@@ -158,7 +158,7 @@ public class RoomManagerDialog {
         return box;
     }
 
-    // validates current date selection and displays an error message if invalid.
+    // validates date selection and displays an error message if invalid.
     private void validate(DatePicker start, DatePicker end, Label errorLabel) {
         LocalDate s = start.getValue();
         LocalDate e = end.getValue();

@@ -45,6 +45,7 @@ public class RoomCardView extends VBox {
         setRoom(room, onManage);
     }
 
+    // Binds the given room data to the UI and sets up the manage action.
     public void setRoom(Room room, Consumer<Room> onManage) {
         img.setImage(new Image(getClass().getResource("/com/example/finalproject/" + room.getImageName()).toString()));
         title.setText(room.getRoomType() + " (" + room.getRoomNumber() + ")");
