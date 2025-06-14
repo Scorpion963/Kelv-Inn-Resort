@@ -109,6 +109,7 @@ public class Room {
         return bookedDates.toList();
     }
 
+    // returns a string representation of the room's details.
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

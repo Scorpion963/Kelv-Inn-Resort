@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 
 import java.util.function.Consumer;
 
-// Creates a card that displays room information and a "Manage" button
+// creates a card that displays room information and a "Manage" button
 // for opening the room management dialog.
 public class RoomCardView extends VBox {
     private final ImageView img = new ImageView();

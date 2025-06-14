@@ -107,7 +107,7 @@ public class HelloController implements Initializable {
         return true;
     }
 
-    // sets the error for date filters
+    // sets the error message for date filters
     private void setDateError(String message) {
         filterDatePickerError.setText(message);
     }
